@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+        <body>
+            <h1>React Raiz</h1>
+            <div id="app"><button onclick="autoDestruicao()">Destruir</button></div>
+
+            <script>
+                function autoDestruicao(){
+                    const root = document.getElementById('app');
+                    const pai = root.parentNode;
+                    console.log(pai);
+                    pai.removeChild(root);
+                }
+                function CriarElemento() {
+                    const btn = document.createElement('button');
+                    btn.onclick = CriarElemento;
+                    const texto = document.createTextNode('Criar elemento');
+                    btn.appendChild(texto);
+
+                    const root = document.getElementById('app');
+                    root.appendChild(btn);
+                    console.log(btn); 
+                  
+                }
+                CriarElemento();
+            </script>
+        </body>
+    </head>
+</html>
